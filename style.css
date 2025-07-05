@@ -1,0 +1,540 @@
+:root {
+  --primary-blue: #54b7f9; /* メインの青色 */
+  --light-blue: #e0f7fa; /* 淡い水色（背景、ボーダーなど） */
+  --highlight-blue: #287fb7; /* 強調用の中間的な青色 */
+  --dark-text-blue: #1d4e71; /* テキスト用の濃い青色 */
+  --pink-spot: #ff50b0; /* アクセントのピンク色 */
+
+  --header-gradient: linear-gradient(90deg, var(--primary-blue) 80%, var(--pink-spot) 120%);
+}
+
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  margin: 0;
+  background: linear-gradient(135deg, #e0f7fa, #f6faff); /* 淡い水色のグラデーション背景 */
+  color: var(--dark-text-blue); /* 一般的なテキスト色 */
+  line-height: 1.6;
+}
+
+/* ヘッダー */
+header {
+  background: var(--header-gradient); /* 青からピンクへのグラデーション */
+  padding: 40px 0 18px 0;
+  text-align: center;
+  border-radius: 0 0 28px 28px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* 影を強調 */
+}
+
+/* プロフィール画像 */
+.profile-img {
+    width: 100%;
+    max-width: 320px;
+    aspect-ratio: 1.91 / 1; /* 横長比率 */
+    height: auto;           /* 高さは自動 */
+}
+
+.profile-img {
+  width: 100%;                  /* 親要素の幅いっぱいで表示 */
+  max-width: 420px;             /* 最大幅を420pxに制限（お好みで調整） */
+  aspect-ratio: 1.91 / 1;      /* 縦長比率 */
+  border-radius: 24px;          /* 角をやや大きく丸くする */
+  object-fit: cover;            /* 画像の縦横比を保ちつつ中央トリミングでフィット */
+  border: 5px solid #fff;       /* 白い太めの縁取りを追加 */
+  margin-bottom: 8px;           /* 下側に8pxの余白 */
+  background: #f5dde8;          /* 画像読み込み前・欠損時に表示される淡いピンク背景 */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08); /* ソフトな影を付けて浮き上がり効果 */
+  display: block;               /* ブロック要素化（中央寄せ可能に） */
+  margin-left: auto;            /* 左右マージンautoで中央寄せ */
+  margin-right: auto;
+}
+
+.profile-image:hover {
+  transform: scale(1.05); /* ホバーで少し拡大 */
+}
+
+
+.catch {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5em;
+  color: var(--pink-spot); /* ピンク色 */
+  text-shadow: 1px 2px 8px rgba(255,255,255,0.8); /* 白い影を強調 */
+}
+
+.subcatch {
+  font-size: 1.1rem;
+  color: #cceeff; /* ヘッダー背景に映える非常に淡い青色 */
+  margin-bottom: 20px;
+}
+
+/* 全体コンテナとセクション */
+.container {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.section {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 28px;
+  margin-top: 32px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08); /* セクションの影を強調 */
+}
+
+.section-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--primary-blue); /* メインの青色 */
+  margin-bottom: 18px;
+  border-bottom: 2px solid var(--light-blue); /* 淡い水色の下線 */
+  padding-bottom: 8px;
+  position: relative; /* アクセント用 */
+}
+.section-title::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 30px; /* 小さな下線アクセント */
+  height: 4px;
+  background-color: var(--pink-spot); /* ピンクのアクセント */
+  border-radius: 2px;
+}
+
+.info-table {
+  width: 100%;
+  font-size: 1rem;
+  margin-bottom: 16px;
+  border-collapse: collapse;
+}
+.info-table td {
+  padding: 10px 0;
+  border-bottom: 1px dashed var(--light-blue); /* 淡い水色の点線ボーダー */
+}
+.info-table tr:last-child td {
+  border-bottom: none;
+}
+.info-table td:first-child {
+  font-weight: 600;
+  color: var(--highlight-blue); /* 強調用青色 */
+  width: 120px;
+}
+.info-table a {
+  color: var(--primary-blue); /* リンク色をメインの青に */
+  text-decoration: none;
+}
+.info-table a:hover {
+  text-decoration: underline;
+  color: var(--pink-spot); /* ホバー時にピンク色に */
+}
+
+/* 強み・できることリスト */
+.strengths-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex; /* Flexboxでレイアウト */
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 15px; /* アイテム間の隙間 */
+}
+.strength-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: var(--light-blue); /* 淡い水色の背景 */
+  padding: 15px;
+  border-radius: 12px;
+  flex: 1 1 calc(50% - 30px); /* 2列レイアウト（PC） */
+  max-width: calc(50% - 30px);
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.05); /* 控えめな内側の影 */
+}
+@media (max-width: 500px) {
+  .strength-item {
+    flex: 1 1 100%; /* スマホでは1列 */
+    max-width: 100%;
+  }
+}
+.hearts {
+  color: var(--pink-spot); /* ピンク色 */
+  font-size: 1.8em; /* ハートを大きく */
+  margin-bottom: 8px;
+}
+.strength-text {
+  font-size: 1.1rem;
+  line-height: 1.4;
+  max-width: 90%;
+  color: var(--dark-text-blue);
+  font-weight: 600;
+}
+.strength-description {
+  background: var(--light-blue); /* 淡い水色の背景 */
+  border-radius: 12px;
+  padding: 15px 20px;
+  margin-top: 25px;
+  font-size: 0.95em;
+  color: var(--highlight-blue); /* 強調用青色 */
+  border: 1px solid rgba(84, 183, 249, 0.2); /* 控えめな青いボーダー */
+  line-height: 1.8;
+}
+
+/* サービス内容 */
+.service-list {
+  list-style: none; /* デフォルトの箇条書きを削除 */
+  padding-left: 0;
+  margin-bottom: 16px;
+}
+.service-list li {
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 25px; /* カスタム箇条書きのためのスペース */
+  font-size: 1.05em;
+}
+.service-list li::before {
+  content: '★'; /* カスタム箇条書きアイコン */
+  color: var(--primary-blue); /* 青色のスター */
+  position: absolute;
+  left: 0;
+  font-size: 1.2em;
+  line-height: 1.5;
+}
+
+/* ギャラリーセクション */
+.gallery-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.gallery-track {
+  display: flex;
+  overflow-x: scroll; /* 横スクロールを可能にする */
+  scroll-snap-type: x mandatory; /* スナップスクロール */
+  -webkit-overflow-scrolling: touch; /* iOSでのスムーズスクロール */
+  scrollbar-width: none; /* Firefoxでのスクロールバー非表示 */
+  flex-grow: 1; /* 親要素内で利用可能なスペースを埋める */
+}
+.gallery-track::-webkit-scrollbar {
+  display: none; /* Webkitブラウザでのスクロールバー非表示 */
+}
+
+.gallery-item {
+  flex-shrink: 0; /* アイテムが縮小されないようにする */
+  scroll-snap-align: start; /* 各アイテムの先頭でスナップ */
+  margin-right: 15px; /* アイテム間のスペース */
+  background: var(--light-blue);
+  border-radius: 12px;
+  overflow: hidden; /* 角丸を適用 */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease-in-out;
+}
+.gallery-item:last-child {
+  margin-right: 0;
+}
+.gallery-item img {
+  display: block;
+  width: 250px; /* 固定幅 */
+  height: 350px; /* 固定高さ */
+  object-fit: cover; /* 画像がコンテナに収まるように調整 */
+  border-radius: 12px;
+}
+.gallery-item:hover {
+  transform: translateY(-5px); /* ホバーエフェクト */
+}
+
+.gallery-arrow {
+  background: var(--primary-blue);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  flex-shrink: 0; /* ボタンが縮小されないようにする */
+}
+.gallery-arrow:hover {
+  background: var(--pink-spot); /* ホバー時にピンク色 */
+  transform: scale(1.1);
+}
+.gallery-arrow:active {
+  transform: scale(0.95);
+}
+
+
+/* 実績 */
+.achievement-text {
+  margin-top: 10px;
+  font-size: 0.97em;
+  color: var(--dark-text-blue);
+}
+.stats-summary {
+  text-align: center;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: var(--primary-blue); /* メインの青色 */
+  padding: 10px;
+  background: rgba(84, 183, 249, 0.08); /* 非常に薄い青の背景 */
+  border-radius: 8px;
+  border: 1px solid rgba(84, 183, 249, 0.15); /* 控えめな青いボーダー */
+}
+
+/* 価格・条件 */
+.price-items {
+  margin-bottom: 20px;
+}
+.price-item {
+  border-bottom: 1px dashed var(--light-blue); /* 淡い水色の点線ボーダー */
+  padding: 12px 0;
+  display: flex;
+  flex-direction: column;
+}
+.price-item:last-child {
+  border-bottom: none;
+}
+.item-label {
+  font-weight: 600;
+  color: var(--highlight-blue); /* 強調用青色 */
+  margin-bottom: 4px;
+  font-size: 1.05rem;
+}
+.item-detail {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--dark-text-blue);
+}
+.price-note {
+  margin-top: 20px;
+  color: var(--dark-text-blue);
+  font-size: 0.95em;
+  background: var(--light-blue); /* 淡い水色の背景 */
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(84, 183, 249, 0.2); /* 控えめな青いボーダー */
+  line-height: 1.8;
+}
+
+/* OK/NGリスト */
+.okng-content {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+.ok-list, .ng-list {
+  background: var(--light-blue); /* 淡い水色の背景 */
+  padding: 15px 20px;
+  border-radius: 12px;
+  border: 1px solid rgba(84, 183, 249, 0.2);
+}
+.okng-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.okng-content li {
+  margin-bottom: 8px;
+  font-size: 1em;
+  position: relative;
+  padding-left: 25px;
+}
+.ok-list h3 {
+  color: var(--primary-blue); /* メインの青色 */
+  margin-bottom: 10px;
+  font-size: 1.2em;
+  text-align: center;
+}
+.ok-list li::before {
+  content: '◎'; /* OKアイコン */
+  color: #5cb85c; /* 緑色のアイコン */
+  position: absolute;
+  left: 0;
+  font-size: 1.1em;
+}
+.ng-list h3 {
+  color: var(--primary-blue); /* メインの青色 */
+  margin-bottom: 10px;
+  font-size: 1.2em;
+  text-align: center;
+}
+.ng-list li::before {
+  content: '✗'; /* NGアイコン */
+  color: #d9534f; /* 赤色のアイコン */
+  position: absolute;
+  left: 0;
+  font-size: 1.1em;
+}
+
+/* スポンサー&グッズ */
+.sponsor-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.sponsor-item {
+  display: flex;
+  flex-direction: column; /* スマホでは縦並び */
+  align-items: flex-start;
+  gap: 8px;
+  padding: 18px 0;
+  border-bottom: 2px dashed var(--light-blue); /* 淡い水色の点線ボーダー */
+}
+@media (min-width: 600px) { /* PCでは横並びに戻す */
+  .sponsor-item {
+    flex-direction: row;
+    align-items: center;
+    gap: 28px;
+  }
+}
+.sponsor-item:last-child {
+  border-bottom: none;
+}
+.sponsor-name {
+  min-width: 100px;
+  font-size: 1.12em;
+  font-weight: bold;
+  color: var(--primary-blue); /* メインの青色 */
+  text-align: left; /* スマホでは左揃え */
+}
+@media (min-width: 600px) {
+  .sponsor-name {
+    text-align: right; /* PCでは右揃え */
+  }
+}
+.sponsor-desc {
+  flex: 1 1 auto;
+  font-size: 1.05em;
+  color: var(--dark-text-blue);
+  padding-left: 0;
+  padding-right: 0;
+  line-height: 1.45;
+}
+@media (min-width: 600px) {
+  .sponsor-desc {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+.goods-list {
+  margin-top: 15px;
+  color: var(--dark-text-blue);
+  font-size: 1em;
+  background: var(--light-blue); /* 淡い水色の背景 */
+  padding: 15px;
+  border-radius: 10px;
+}
+.goods-list b {
+  color: var(--highlight-blue); /* 強調用青色 */
+}
+
+/* お問い合わせ */
+.contact-description {
+  margin-bottom: 15px;
+  color: var(--highlight-blue); /* 強調用青色 */
+  font-size: 0.95em;
+  text-align: center;
+}
+textarea.input {
+  width: calc(100% - 20px);
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid var(--primary-blue); /* 青色のボーダー */
+  font-size: 1rem;
+  resize: vertical;
+  min-height: 160px;
+  box-sizing: border-box;
+  background-color: #f8fcfd; /* 非常に淡い背景色 */
+}
+textarea.input:focus {
+  outline: 3px solid var(--pink-spot); /* フォーカス時にピンク色のアウトライン */
+  border-color: var(--pink-spot);
+  box-shadow: 0 0 8px rgba(255, 80, 176, 0.3); /* ピンク色の影 */
+}
+
+.cta-btn {
+  background: var(--primary-blue); /* メインの青色 */
+  color: #fff;
+  border: none;
+  padding: 18px 0;
+  border-radius: 32px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 20px;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.cta-btn:hover {
+  background: var(--pink-spot); /* ホバー時にピンク色に変化 */
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 80, 176, 0.2);
+}
+
+.copy-alert {
+  background: #e0f7fa; /* 淡い水色の背景 */
+  color: var(--highlight-blue);
+  padding: 10px 15px;
+  border-radius: 8px;
+  margin-top: 15px;
+  text-align: center;
+  font-size: 0.95em;
+  border: 1px solid var(--primary-blue);
+}
+
+.sns-contact-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 25px;
+}
+.sns-btn {
+  display: block;
+  text-align: center;
+  padding: 15px;
+  border-radius: 32px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+.sns-btn:nth-child(1) { /* Instagramのグラデーション */
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  color: #fff;
+}
+.sns-btn:nth-child(2) { /* X (Twitter)の黒 */
+  background: #000;
+  color: #fff;
+}
+.sns-btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+.contact-note {
+  margin-top: 20px;
+  color: var(--highlight-blue);
+  font-size: 0.9em;
+  text-align: center;
+  line-height: 1.6;
+}
+
+/* フッター */
+footer {
+  text-align: center;
+  padding: 25px;
+  margin-top: 50px;
+  color: #88aadd; /* 落ち着いた青色 */
+  font-size: 0.85em;
+  background: linear-gradient(90deg, #e0f7fa, #cceeff); /* 淡い水色のグラデーション */
+  border-top: 1px solid #c0e0f0;
+}
