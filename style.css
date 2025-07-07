@@ -682,3 +682,47 @@ footer {
     display: none;
   }
 }
+.blue-h1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  background: linear-gradient(90deg, #2196f3 0%, #21d4fd 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #2196f3; /* フォールバック用 */
+  margin-bottom: 1.2rem;
+  letter-spacing: 0.04em;
+  text-shadow: 0 2px 16px rgba(33, 150, 243, 0.13);
+}
+.info-table td a img {
+  transition: filter 0.2s, transform 0.15s;
+}
+.info-table td a:hover img {
+  filter: brightness(1.2) drop-shadow(0 0 3px #37B9F1);
+  transform: scale(1.1);
+}
+tr.sns-row td {
+  border-bottom: none !important;
+}
+.info-table td a {
+  text-decoration: none;
+  border-bottom: none;
+}
+.info-table td a img {
+  border: none;
+}
+.info-table td a {
+  display: inline-block;       /* ← 画像リンクはインラインブロックに */
+  text-decoration: none !important; /* 下線を完全無効に */
+  border-bottom: none !important;   /* ボーダーも完全無効に */
+  margin-right: 6px;           /* アイコンの間に隙間 */
+  line-height: 0;              /* 行高さも0で謎の隙間予防 */
+}
+.info-table td a:last-child {
+  margin-right: 0;
+}
+.info-table td a img {
+  border: none;
+  box-shadow: none;
+}
