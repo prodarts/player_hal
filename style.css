@@ -426,7 +426,7 @@ header {
 }
 @media (min-width: 600px) {
   .sponsor-name {
-     /* text-align: right; を削除またはコメントアウト */
+   /* text-align: right; を削除またはコメントアウト */
   }
 }
 .sponsor-desc {
