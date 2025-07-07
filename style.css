@@ -1,69 +1,73 @@
 :root {
-  --primary-blue: #54b7f9; /* メインの青色 */
-  --light-blue: #e0f7fa; /* 淡い水色（背景、ボーダーなど） */
-  --highlight-blue: #287fb7; /* 強調用の中間的な青色 */
-  --dark-text-blue: #1d4e71; /* テキスト用の濃い青色 */
-  --pink-spot: #ff50b0; /* アクセントのピンク色 */
+  /* 新しいカラーパレット（鮮やかな青と水色） */
+  --main-blue-light: #5CE1E6; /* ヘッダーグラデーション開始、鮮やかな水色 */
+  --main-blue-dark: #37B9F1; /* ヘッダーグラデーション終了、鮮やかな青 */
+  --soft-blue-bg: #E0F7FA; /* 背景、セクション背景など、少し淡い水色 */
+  --border-blue: #B0D9E6; /* ボーダー、線など、淡い青 */
+  --pink-accent: #FF50B0; /* アクセントのピンク色 (彩度高め) */
+  --deep-text-blue: #1A3E50; /* 一般的なテキスト、濃いめの落ち着いた青 */
+  --highlight-text-blue: #287FB7; /* 強調テキスト、少し明るい青 */
 
-  --header-gradient: linear-gradient(90deg, var(--primary-blue) 80%, var(--pink-spot) 120%);
+  /* ヘッダーのグラデーションを鮮やかな水色と青ベースに変更 */
+  --header-gradient: linear-gradient(90deg, var(--main-blue-light) 0%, var(--main-blue-dark) 100%);
 }
 
 body {
   font-family: 'Noto Sans JP', sans-serif;
   margin: 0;
-  background: linear-gradient(135deg, #e0f7fa, #f6faff); /* 淡い水色のグラデーション背景 */
-  color: var(--dark-text-blue); /* 一般的なテキスト色 */
+  /* 背景色をより薄いグラデーションに変更 */
+  background: linear-gradient(135deg, var(--soft-blue-bg), #F6FAFF);
+  color: var(--deep-text-blue); /* 一般的なテキスト色 */
   line-height: 1.6;
 }
 
 /* ヘッダー */
 header {
-  background: var(--header-gradient); /* 青からピンクへのグラデーション */
+  background: var(--header-gradient); /* 水色と青のグラデーション */
   padding: 40px 0 18px 0;
   text-align: center;
   border-radius: 0 0 28px 28px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* 影を強調 */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
 /* プロフィール画像 */
-.profile-img {
-    width: 100%;
-    max-width: 320px;
-    aspect-ratio: 1.91 / 1; /* 横長比率 */
-    height: auto;           /* 高さは自動 */
+.profile-image-container {
+  margin-bottom: 20px;
 }
 
 .profile-img {
   width: 100%;                  /* 親要素の幅いっぱいで表示 */
-  max-width: 420px;             /* 最大幅を420pxに制限（お好みで調整） */
-  aspect-ratio: 1.91 / 1;      /* 縦長比率 */
-  border-radius: 24px;          /* 角をやや大きく丸くする */
-  object-fit: cover;            /* 画像の縦横比を保ちつつ中央トリミングでフィット */
-  border: 5px solid #fff;       /* 白い太めの縁取りを追加 */
-  margin-bottom: 8px;           /* 下側に8pxの余白 */
-  background: #f5dde8;          /* 画像読み込み前・欠損時に表示される淡いピンク背景 */
-  box-shadow: 0 4px 8px rgba(0,0,0,0.08); /* ソフトな影を付けて浮き上がり効果 */
-  display: block;               /* ブロック要素化（中央寄せ可能に） */
+  max-width: 420px;             /* 最大幅を420pxに制限 */
+  aspect-ratio: 1.91 / 1;       /* 縦横比を維持 */
+  border-radius: 24px;          /* 角丸を適用 */
+  object-fit: cover;            /* 画像をトリミングしてフィット */
+  border: 5px solid #fff;       /* 白い太めの縁取り */
+  margin-bottom: 8px;           /* 下側に余白 */
+  background: var(--soft-blue-bg); /* 画像読み込み前・欠損時に表示される背景色 */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08); /* ソフトな影 */
+  display: block;               /* ブロック要素化 */
   margin-left: auto;            /* 左右マージンautoで中央寄せ */
   margin-right: auto;
+  transition: transform 0.3s ease;
 }
 
-.profile-image:hover {
-  transform: scale(1.05); /* ホバーで少し拡大 */
+.profile-img:hover {
+  transform: scale(1.03); /* ホバーで少し拡大 */
 }
 
-
+/* キャッチコピー */
 .catch {
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 0.5em;
-  color: var(--pink-spot); /* ピンク色 */
-  text-shadow: 1px 2px 8px rgba(255,255,255,0.8); /* 白い影を強調 */
+  color: var(--pink-accent); /* 鮮やかなピンク色 */
+  /* 元画像のようなネオン効果を強調 */
+  text-shadow: 0 0 8px rgba(255,255,255,0.9), 0 0 15px rgba(255,80,176,0.6);
 }
 
 .subcatch {
   font-size: 1.1rem;
-  color: #cceeff; /* ヘッダー背景に映える非常に淡い青色 */
+  color: #E0FFFF; /* ヘッダー背景に映える淡い水色 */
   margin-bottom: 20px;
 }
 
@@ -79,26 +83,26 @@ header {
   border-radius: 18px;
   padding: 28px;
   margin-top: 32px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.08); /* セクションの影を強調 */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
 }
 
 .section-title {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-weight: 700;
-  color: var(--primary-blue); /* メインの青色 */
+  color: var(--main-blue-dark); /* メインの青色 */
   margin-bottom: 18px;
-  border-bottom: 2px solid var(--light-blue); /* 淡い水色の下線 */
+  border-bottom: 2px solid var(--border-blue); /* 淡い水色の下線 */
   padding-bottom: 8px;
-  position: relative; /* アクセント用 */
+  position: relative;
 }
 .section-title::before {
   content: '';
   position: absolute;
   left: 0;
   bottom: -2px;
-  width: 30px; /* 小さな下線アクセント */
+  width: 100%; /* ← この値を変更してください */
   height: 4px;
-  background-color: var(--pink-spot); /* ピンクのアクセント */
+  background-color: var(--pink-accent); /* ピンクのアクセント */
   border-radius: 2px;
 }
 
@@ -110,23 +114,23 @@ header {
 }
 .info-table td {
   padding: 10px 0;
-  border-bottom: 1px dashed var(--light-blue); /* 淡い水色の点線ボーダー */
+  border-bottom: 1px dashed var(--border-blue);
 }
 .info-table tr:last-child td {
   border-bottom: none;
 }
 .info-table td:first-child {
   font-weight: 600;
-  color: var(--highlight-blue); /* 強調用青色 */
+  color: var(--highlight-text-blue);
   width: 120px;
 }
 .info-table a {
-  color: var(--primary-blue); /* リンク色をメインの青に */
+  color: var(--main-blue-dark);
   text-decoration: none;
 }
 .info-table a:hover {
   text-decoration: underline;
-  color: var(--pink-spot); /* ホバー時にピンク色に */
+  color: var(--pink-accent);
 }
 
 /* 強み・できることリスト */
@@ -134,67 +138,67 @@ header {
   list-style: none;
   padding: 0;
   margin: 0;
-  display: flex; /* Flexboxでレイアウト */
+  display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  gap: 15px; /* アイテム間の隙間 */
+  gap: 15px;
 }
 .strength-item {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  background: var(--light-blue); /* 淡い水色の背景 */
+  background: var(--soft-blue-bg); /* 淡い水色の背景 */
   padding: 15px;
   border-radius: 12px;
-  flex: 1 1 calc(50% - 30px); /* 2列レイアウト（PC） */
+  flex: 1 1 calc(50% - 30px);
   max-width: calc(50% - 30px);
-  box-shadow: inset 0 0 5px rgba(0,0,0,0.05); /* 控えめな内側の影 */
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.05);
 }
 @media (max-width: 500px) {
   .strength-item {
-    flex: 1 1 100%; /* スマホでは1列 */
+    flex: 1 1 100%;
     max-width: 100%;
   }
 }
 .hearts {
-  color: var(--pink-spot); /* ピンク色 */
-  font-size: 1.8em; /* ハートを大きく */
+  color: var(--pink-accent); /* ピンク色 (絵文字は環境依存ですが、念のため指定) */
+  font-size: 1.8em;
   margin-bottom: 8px;
 }
-.strength-text {
+.subcatch {
   font-size: 1.1rem;
-  line-height: 1.4;
-  max-width: 90%;
-  color: var(--dark-text-blue);
-  font-weight: 600;
+  color: #E0FFFF;
+  margin-bottom: 20px;
+  font-weight: 700; /* 太字 */
+  text-shadow: 0 0 2px rgba(255,255,255,0.5); /* 控えめな影 */
 }
 .strength-description {
-  background: var(--light-blue); /* 淡い水色の背景 */
+  background: var(--soft-blue-bg);
   border-radius: 12px;
   padding: 15px 20px;
   margin-top: 25px;
   font-size: 0.95em;
-  color: var(--highlight-blue); /* 強調用青色 */
-  border: 1px solid rgba(84, 183, 249, 0.2); /* 控えめな青いボーダー */
+  color: var(--highlight-text-blue);
+  border: 1px solid rgba(84, 183, 249, 0.2);
   line-height: 1.8;
 }
 
 /* サービス内容 */
 .service-list {
-  list-style: none; /* デフォルトの箇条書きを削除 */
+  list-style: none;
   padding-left: 0;
   margin-bottom: 16px;
 }
 .service-list li {
   margin-bottom: 10px;
   position: relative;
-  padding-left: 25px; /* カスタム箇条書きのためのスペース */
+  padding-left: 25px;
   font-size: 1.05em;
 }
 .service-list li::before {
-  content: '★'; /* カスタム箇条書きアイコン */
-  color: var(--primary-blue); /* 青色のスター */
+  content: '★';
+  color: var(--main-blue-dark); /* 青色のスター */
   position: absolute;
   left: 0;
   font-size: 1.2em;
@@ -210,23 +214,24 @@ header {
 
 .gallery-track {
   display: flex;
-  overflow-x: scroll; /* 横スクロールを可能にする */
-  scroll-snap-type: x mandatory; /* スナップスクロール */
-  -webkit-overflow-scrolling: touch; /* iOSでのスムーズスクロール */
-  scrollbar-width: none; /* Firefoxでのスクロールバー非表示 */
-  flex-grow: 1; /* 親要素内で利用可能なスペースを埋める */
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  flex-grow: 1;
+  padding-bottom: 10px;
 }
 .gallery-track::-webkit-scrollbar {
-  display: none; /* Webkitブラウザでのスクロールバー非表示 */
+  display: none;
 }
 
 .gallery-item {
-  flex-shrink: 0; /* アイテムが縮小されないようにする */
-  scroll-snap-align: start; /* 各アイテムの先頭でスナップ */
-  margin-right: 15px; /* アイテム間のスペース */
-  background: var(--light-blue);
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  margin-right: 15px;
+  background: var(--soft-blue-bg);
   border-radius: 12px;
-  overflow: hidden; /* 角丸を適用 */
+  overflow: hidden;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   transition: transform 0.2s ease-in-out;
 }
@@ -235,17 +240,17 @@ header {
 }
 .gallery-item img {
   display: block;
-  width: 250px; /* 固定幅 */
-  height: 350px; /* 固定高さ */
-  object-fit: cover; /* 画像がコンテナに収まるように調整 */
+  width: 200px; /* PC版: 9:16比率 */
+  height: 355px; /* PC版: 9:16比率 */
+  object-fit: cover;
   border-radius: 12px;
 }
 .gallery-item:hover {
-  transform: translateY(-5px); /* ホバーエフェクト */
+  transform: translateY(-5px);
 }
 
 .gallery-arrow {
-  background: var(--primary-blue);
+  background: var(--main-blue-dark);
   color: #fff;
   border: none;
   border-radius: 50%;
@@ -259,10 +264,10 @@ header {
   cursor: pointer;
   box-shadow: 0 3px 8px rgba(0,0,0,0.2);
   transition: background-color 0.3s ease, transform 0.2s ease;
-  flex-shrink: 0; /* ボタンが縮小されないようにする */
+  flex-shrink: 0;
 }
 .gallery-arrow:hover {
-  background: var(--pink-spot); /* ホバー時にピンク色 */
+  background: var(--pink-accent);
   transform: scale(1.1);
 }
 .gallery-arrow:active {
@@ -270,29 +275,45 @@ header {
 }
 
 
-/* 実績 */
+/* 実績・評価 */
 .achievement-text {
   margin-top: 10px;
   font-size: 0.97em;
-  color: var(--dark-text-blue);
+  color: var(--deep-text-blue);
 }
 .stats-summary {
   text-align: center;
   margin-bottom: 10px;
   font-weight: 600;
-  color: var(--primary-blue); /* メインの青色 */
+  color: var(--main-blue-dark);
   padding: 10px;
-  background: rgba(84, 183, 249, 0.08); /* 非常に薄い青の背景 */
+  background: rgba(84, 183, 249, 0.08);
   border-radius: 8px;
-  border: 1px solid rgba(84, 183, 249, 0.15); /* 控えめな青いボーダー */
+  border: 1px solid rgba(84, 183, 249, 0.15);
 }
+/* 店長コメントのスタイル */
+.store-testimonial {
+  background: var(--soft-blue-bg);
+  border-radius: 12px;
+  padding: 15px 20px;
+  margin-top: 15px;
+  font-size: 0.95em;
+  color: var(--highlight-text-blue);
+  border: 1px solid rgba(84, 183, 249, 0.2);
+  line-height: 1.8;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.03);
+}
+.store-testimonial b {
+  color: var(--pink-accent);
+}
+
 
 /* 価格・条件 */
 .price-items {
   margin-bottom: 20px;
 }
 .price-item {
-  border-bottom: 1px dashed var(--light-blue); /* 淡い水色の点線ボーダー */
+  border-bottom: 1px dashed var(--border-blue);
   padding: 12px 0;
   display: flex;
   flex-direction: column;
@@ -302,23 +323,23 @@ header {
 }
 .item-label {
   font-weight: 600;
-  color: var(--highlight-blue); /* 強調用青色 */
+  color: var(--highlight-text-blue);
   margin-bottom: 4px;
   font-size: 1.05rem;
 }
 .item-detail {
   font-size: 1rem;
   line-height: 1.5;
-  color: var(--dark-text-blue);
+  color: var(--deep-text-blue);
 }
 .price-note {
   margin-top: 20px;
-  color: var(--dark-text-blue);
+  color: var(--deep-text-blue);
   font-size: 0.95em;
-  background: var(--light-blue); /* 淡い水色の背景 */
+  background: var(--soft-blue-bg);
   padding: 12px;
   border-radius: 8px;
-  border: 1px solid rgba(84, 183, 249, 0.2); /* 控えめな青いボーダー */
+  border: 1px solid rgba(84, 183, 249, 0.2);
   line-height: 1.8;
 }
 
@@ -329,7 +350,7 @@ header {
   gap: 25px;
 }
 .ok-list, .ng-list {
-  background: var(--light-blue); /* 淡い水色の背景 */
+  background: var(--soft-blue-bg);
   padding: 15px 20px;
   border-radius: 12px;
   border: 1px solid rgba(84, 183, 249, 0.2);
@@ -346,27 +367,27 @@ header {
   padding-left: 25px;
 }
 .ok-list h3 {
-  color: var(--primary-blue); /* メインの青色 */
+  color: var(--main-blue-dark);
   margin-bottom: 10px;
   font-size: 1.2em;
   text-align: center;
 }
 .ok-list li::before {
-  content: '◎'; /* OKアイコン */
-  color: #5cb85c; /* 緑色のアイコン */
+  content: '◎';
+  color: #5cb85c;
   position: absolute;
   left: 0;
   font-size: 1.1em;
 }
 .ng-list h3 {
-  color: var(--primary-blue); /* メインの青色 */
+  color: var(--main-blue-dark);
   margin-bottom: 10px;
   font-size: 1.2em;
   text-align: center;
 }
 .ng-list li::before {
-  content: '✗'; /* NGアイコン */
-  color: #d9534f; /* 赤色のアイコン */
+  content: '✗';
+  color: #d9534f;
   position: absolute;
   left: 0;
   font-size: 1.1em;
@@ -384,7 +405,7 @@ header {
   align-items: flex-start;
   gap: 8px;
   padding: 18px 0;
-  border-bottom: 2px dashed var(--light-blue); /* 淡い水色の点線ボーダー */
+  border-bottom: 2px dashed var(--border-blue);
 }
 @media (min-width: 600px) { /* PCでは横並びに戻す */
   .sponsor-item {
@@ -400,18 +421,18 @@ header {
   min-width: 100px;
   font-size: 1.12em;
   font-weight: bold;
-  color: var(--primary-blue); /* メインの青色 */
-  text-align: left; /* スマホでは左揃え */
+  color: var(--main-blue-dark);
+  text-align: left;
 }
 @media (min-width: 600px) {
   .sponsor-name {
-    text-align: right; /* PCでは右揃え */
+    text-align: right;
   }
 }
 .sponsor-desc {
   flex: 1 1 auto;
   font-size: 1.05em;
-  color: var(--dark-text-blue);
+  color: var(--deep-text-blue);
   padding-left: 0;
   padding-right: 0;
   line-height: 1.45;
@@ -423,22 +444,55 @@ header {
   }
 }
 
+.sponsor-btn {
+  display: inline-block;
+  background: linear-gradient(90deg, var(--main-blue-light) 15%, var(--main-blue-dark) 85%); /* 青系のグラデーション */
+  color: #fff;
+  font-weight: 800;
+  font-size: 1.10em;
+  padding: 15px 35px;
+  border-radius: 28px;
+  text-align: center;
+  border: none;
+  text-decoration: none;
+  box-shadow: 0 3px 14px rgba(0,0,0,0.1);
+  letter-spacing: 0.04em;
+  transition: background 0.16s, box-shadow 0.14s, transform 0.08s;
+  margin-left: 12px;
+  white-space: nowrap;
+}
+.sponsor-btn:hover {
+  background: linear-gradient(90deg, var(--pink-accent) 30%, var(--main-blue-dark) 85%); /* ホバーでピンクに変化 */
+  box-shadow: 0 8px 32px rgba(255, 80, 176, 0.24);
+  transform: scale(1.04);
+}
+@media (max-width: 700px) {
+  .sponsor-btn {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 7px;
+    font-size: 1.07em;
+    border-radius: 24px;
+    padding: 15px 0;
+  }
+}
+
 .goods-list {
   margin-top: 15px;
-  color: var(--dark-text-blue);
+  color: var(--deep-text-blue);
   font-size: 1em;
-  background: var(--light-blue); /* 淡い水色の背景 */
+  background: var(--soft-blue-bg);
   padding: 15px;
   border-radius: 10px;
 }
 .goods-list b {
-  color: var(--highlight-blue); /* 強調用青色 */
+  color: var(--highlight-text-blue);
 }
 
 /* お問い合わせ */
 .contact-description {
   margin-bottom: 15px;
-  color: var(--highlight-blue); /* 強調用青色 */
+  color: var(--highlight-text-blue);
   font-size: 0.95em;
   text-align: center;
 }
@@ -446,83 +500,98 @@ textarea.input {
   width: calc(100% - 20px);
   padding: 15px;
   border-radius: 10px;
-  border: 1px solid var(--primary-blue); /* 青色のボーダー */
+  border: 1px solid var(--main-blue-light);
   font-size: 1rem;
   resize: vertical;
   min-height: 160px;
   box-sizing: border-box;
-  background-color: #f8fcfd; /* 非常に淡い背景色 */
+  background-color: #F8FCFF;
 }
 textarea.input:focus {
-  outline: 3px solid var(--pink-spot); /* フォーカス時にピンク色のアウトライン */
-  border-color: var(--pink-spot);
-  box-shadow: 0 0 8px rgba(255, 80, 176, 0.3); /* ピンク色の影 */
+  outline: 3px solid var(--pink-accent);
+  border-color: var(--pink-accent);
+  box-shadow: 0 0 8px rgba(255, 80, 176, 0.3);
 }
 
+/* 共通ボタンスタイル */
 .cta-btn {
-  background: var(--primary-blue); /* メインの青色 */
+  background: linear-gradient(90deg, var(--main-blue-light) 15%, var(--main-blue-dark) 85%);
   color: #fff;
+  font-weight: 800;
+  font-size: 1.13em;
+  padding: 16px 0;
+  border-radius: 30px;
   border: none;
-  padding: 18px 0;
-  border-radius: 32px;
-  font-size: 1.2rem;
-  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  margin: 16px 0 10px 0;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.1);
+  transition: background 0.15s, box-shadow 0.14s, transform 0.09s;
   cursor: pointer;
   width: 100%;
-  margin-top: 20px;
-  transition: all 0.3s ease;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 .cta-btn:hover {
-  background: var(--pink-spot); /* ホバー時にピンク色に変化 */
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(255, 80, 176, 0.2);
+  background: linear-gradient(90deg, var(--pink-accent) 25%, var(--main-blue-dark) 90%);
+  box-shadow: 0 6px 28px rgba(255, 80, 176, 0.24);
+  transform: translateY(-2px) scale(1.03);
+}
+.cta-btn:active {
+  box-shadow: 0 1px 5px rgba(0,0,0,0.08);
+  transform: scale(0.98);
 }
 
+
 .copy-alert {
-  background: #e0f7fa; /* 淡い水色の背景 */
-  color: var(--highlight-blue);
+  background: var(--soft-blue-bg);
+  color: var(--highlight-text-blue);
   padding: 10px 15px;
   border-radius: 8px;
   margin-top: 15px;
   text-align: center;
   font-size: 0.95em;
-  border: 1px solid var(--primary-blue);
+  border: 1px solid var(--main-blue-light);
 }
 
 .sns-contact-buttons {
   display: flex;
-  flex-direction: column;
-  gap: 15px;
+  justify-content: center;
+  gap: 16px;
   margin-top: 25px;
+  flex-wrap: wrap;
 }
 .sns-btn {
-  display: block;
+  display: inline-block;
   text-align: center;
-  padding: 15px;
+  padding: 15px 0;
   border-radius: 32px;
   text-decoration: none;
   font-size: 1.1rem;
   font-weight: 600;
   transition: all 0.3s ease;
   box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+  width: 220px;
+  margin: 0;
 }
-.sns-btn:nth-child(1) { /* Instagramのグラデーション */
+/* Instagramボタンのブランドカラー */
+.sns-btn:nth-child(1) {
   background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
   color: #fff;
 }
-.sns-btn:nth-child(2) { /* X (Twitter)の黒 */
+/* X (Twitter)ボタンのブランドカラー */
+.sns-btn:nth-child(2) {
   background: #000;
   color: #fff;
 }
 .sns-btn:hover {
   transform: translateY(-2px);
   opacity: 0.9;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
 }
 
 .contact-note {
   margin-top: 20px;
-  color: var(--highlight-blue);
+  color: var(--highlight-text-blue);
   font-size: 0.9em;
   text-align: center;
   line-height: 1.6;
@@ -533,8 +602,83 @@ footer {
   text-align: center;
   padding: 25px;
   margin-top: 50px;
-  color: #88aadd; /* 落ち着いた青色 */
+  color: var(--highlight-text-blue);
   font-size: 0.85em;
-  background: linear-gradient(90deg, #e0f7fa, #cceeff); /* 淡い水色のグラデーション */
-  border-top: 1px solid #c0e0f0;
+  background: linear-gradient(90deg, var(--soft-blue-bg), #CCEEFF);
+  border-top: 1px solid var(--border-blue);
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 20px;
+  }
+  .section {
+    padding: 20px;
+  }
+  .catch {
+    font-size: 1.6rem; /* ← スマホでのキャッチコピーサイズ */
+  }
+  .subcatch {
+    font-size: 1rem;
+  }
+  /* プロフィール画像を四角に戻し、アスペクト比を維持して幅を調整 */
+  .profile-img {
+    width: 100%;
+    max-width: 320px; /* スマホでの最大幅 */
+    aspect-ratio: 1.91 / 1;
+    border-radius: 24px; /* 角丸を維持 */
+  }
+  .gallery-item img {
+    width: 150px; /* スマホでのギャラリー画像サイズ */
+    height: 267px; /* 9:16比率を維持 */
+  }
+  .gallery-arrow {
+    width: 35px;
+    height: 35px;
+    font-size: 1.4rem;
+    left: 0px;
+    right: 0px;
+  }
+  .okng-content {
+    gap: 15px;
+  }
+  .sns-contact-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .sns-btn {
+    width: 100%;
+    min-width: 0;
+    font-size: 1.07em;
+    border-radius: 24px;
+    padding: 15px 0;
+  }
+  .sponsor-item {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    padding: 18px 0;
+  }
+  .sponsor-name {
+    text-align: left;
+    margin-bottom: 2px;
+  }
+  .sponsor-desc {
+    padding: 0 0 5px 0;
+    text-align: left;
+  }
+}
+
+@media (max-width: 480px) {
+  .catch {
+    font-size: 1.2rem; /* ← さらに小さいスマホでのキャッチコピーサイズ */
+  }
+  .gallery-item img {
+    width: 130px; /* さらに小さいスマホでの画像サイズ */
+    height: 232px; /* 9:16比率を維持 */
+  }
+  .gallery-arrow {
+    display: none;
+  }
 }
