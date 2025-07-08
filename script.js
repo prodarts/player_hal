@@ -59,14 +59,26 @@ function copyContactTemplate() {
     }
   }
 }
-// JSONデータ反映部分 ←★この下に追加
+<script>
 fetch('./player_hal.json')
-  .then(res => res.json())
-  .then(data => {
-    // 例：基本情報
-    document.getElementById('player-image').src      = data.profile.profileImage;
-    document.getElementById('player-catch').innerHTML   = data.profile.catch.replace(/\n/g,'<br>');
-    ...
-    // 配列 → forEach で li 生成
-    data.strengths.forEach(str => { ... });
-  });
+  .then(r => r.json())
+  .then(d => {
+    /* 画像を反映 */
+    document.getElementById('player-image').src = d.profile.profileImage;
+
+    /* Catch コピーなど － 例 */
+    document.getElementById('player-catch').innerHTML =
+      d.profile.catch.replace(/\n/g, '<br>');
+
+    /* 強みをリスト化 */
+    const ul = document.getElementById('player-strengths');
+    d.strengths.forEach(obj => {
+      const li = document.createElement('li');
+      li.textContent = obj.label;   // ★スコア表示もしたいなら `${obj.label} ★${obj.score}` などに
+      ul.appendChild(li);
+    });
+
+    /* --- ここに他のセクションも同じ要領で追加可 --- */
+  })
+  .catch(console.error);
+</script>
