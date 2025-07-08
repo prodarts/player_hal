@@ -1,0 +1,143 @@
+{
+  "category": {
+    "tour": ["JAPAN", "JAPAN LADIES"],  // 複数所属もOKな配列形式
+    "area": "東京都",
+    "areaGroup": "関東"
+  },
+  "meta": {
+    "siteTitle": "内堀遥香｜女子プロダーツイベント出演依頼はこちら",
+    "pageCatch": "今日もどこかでダーツが出会いをつないでる",
+    "description": "プロダーツプレイヤー・内堀遥香（JAPAN LADIES所属）の公式イベント営業LP。店舗集客・SNS拡散・現場盛り上げすべてお任せください。",
+    "og": {
+      "title": "内堀遥香｜女子プロダーツイベント出演依頼はこちら",
+      "description": "JAPAN LADIES所属。盛り上げ・集客・初心者対応もOK。現場とネットで“距離感バグってる”盛り上げ力を実感ください。",
+      "url": "https://prodarts.github.io/player_hal/",
+      "image": "https://prodarts.github.io/player_hal/ogp.jpg",
+      "imageAlt": "女子プロダーツプレイヤー内堀遥香 イベントイメージ",
+      "siteName": "内堀遥香 イベント営業LP"
+    }
+  },
+  "profile": {
+    "nameJP": "内堀 遥香",
+    "nameEN": "HARUKA UCHIBORI",
+    "nickname": "はる／はるちゃん",
+    "catch": "『 まだ秘密兵器 』\nガチダーツもワイワイダーツでも大好き！\nみんなを巻き込んで\n楽しくお店を盛り上げます！",
+    "subcatch": "元ダーツバーの社員だったので\n店内の細かな目配り気配りが得意なダーツプレイヤー\nプロダーツイベント出演依頼",
+    "feature": "身長ぎり160（自称）／右利き／めっちゃ負けず嫌い😣",
+    "area": "東京・関東エリア（その他、応相談）",
+    "pref": "東京都",
+    "org": ["Soft Darts Professional Tour JAPAN", "JAPAN LADIES"], // 団体は配列対応
+    "rating": "ダーツライブ 10",
+    "profileImage": "ogp.jpg"
+  },
+  "sns": {
+    "instagram": {
+      "url": "https://www.instagram.com/haru5372darts?igsh=MTEycWMxYmYyejU4bg%3D%3D&utm_source=qr",
+      "icon": "Instagram_icon.png"
+    },
+    "x": {
+      "url": "https://x.com/haru5372darts",
+      "icon": "X_icon.png"
+    }
+  },
+  "strengths": [
+    {"label":"ドリンク運びはお手の物！","score":5},
+    {"label":"目配りと周りへの気配り","score":5},
+    {"label":"盛り上げ力は常に100%マックス！","score":5},
+    {"label":"初心者・女性対応もお任せ下さい","score":5},
+    {"label":"SNS集客→頑張って投稿...","score":3},
+    {"label":"柔軟対応・カスタム（お気軽にご相談ください）","score":4}
+  ],
+  "strengthDescription": "元ダーツバーの社員だったので店内の細かな目配り気配りが得意です！\nダーツもお酒も乾杯も大大大歓迎！\nとにかくダーツして遊びましょう♡\n少しずつ成長して絶対にプロで活躍するので応援お願いします！\n金額・条件などご相談はお気軽に。",
+  "gallery": [
+    {"src":"img_1.jpg", "alt":"内堀遥香｜東京都の女子プロダーツイベント出演・依頼はお気軽に"},
+    {"src":"img_2.jpg", "alt":"女子プロダーツ内堀遥香｜東京都の店舗イベント出演・接客の様子"},
+    {"src":"img_3.jpg", "alt":"内堀遥香プロ｜東京都女子プロダーツイベントでのダーツプレイ風景"},
+    {"src":"img_4.jpg", "alt":"女子プロダーツプレイヤー内堀遥香｜イベント出演先店舗にて"},
+    {"src":"img_5.jpg", "alt":"東京都女子プロダーツイベント出演依頼｜内堀遥香の活動シーン"}
+  ],
+  "menu": [
+    "対戦チャレンジマッチ",
+    "プレイヤーday",
+    "お酒も好きなので飲みイベントもOK！"
+  ],
+  "achievements": {
+    "titles": [
+      "JAPAN LADIES ほぼ参戦中",
+      "JAPAN LADIES 2024年175位"
+    ],
+    "testimonial": {
+      "author": "高円寺Kplus店長",
+      "comment": "いつもいろんなお客さんを巻き込みながらダーツをしてくれるので最近はお客さんのダーツ熱が上がってみんなダーツに燃えるようになりました。"
+    }
+  },
+  "prices": [
+    {"label":"ダーツプレイヤーday「基本4時間」","detail":"20,000円から（税込）"},
+    {"label":"ハウスイベント「大会終了まで」","detail":"30,000円（税込）"},
+    {"label":"大型トーナメント出演「閉会まで」","detail":"30,000円（税込）"},
+    {"label":"その他","detail":"相談可能／お店・内容により変動が多少ありますのでお気軽にDMください。柔軟にご対応致します。"}
+  ],
+  "priceNote": "※交通費：都内一律1,000円／その他は場所により要相談\n※宿泊費がかかる場合：お店で手配&ご負担、自身で手配した場合は後で全額負担（可能な限り安いプランで宿泊致します。）人の家は不可です。\n※大会前後のその地域での数日間のイベント、複数店舗でのイベントは大歓迎です。\nご予算やイベント内容に応じてついても柔軟に調整できますので、ぜひお気軽にご相談ください。まずは「相談だけ」でも大歓迎！",
+  "ok": [
+    "ショット、クライナーOK（ほどほどで...）・ドリンク乾杯・写真撮影・SNS交流投稿"
+  ],
+  "ng": [
+    "お触り、強制飲酒、連絡先交換（SNSはOK）、長時間拘束"
+  ],
+  "sponsors": [
+    {
+      "name": "JOKER DRIVER",
+      "desc": "プレイヤーグッズあります！大会ブースか私から直接、手渡し致します！（サイン付きの可！）アクリルキーホルダー 1,500円・タンブラー・ダーツライブカード・ダーツケースなど",
+      "url": "https://jokerdriver.com/"
+    },
+    {
+      "name": "GSD",
+      "desc": "カッコいいも可愛いも100%満足対応のオーダーユニフォーム屋さん",
+      "url": "http://www.gsd-darts.com/"
+    },
+    {
+      "name": "カラオケ＆ダーツBAR Kplus高円寺",
+      "desc": "杉並区でダーツするならココが一番ダーツ熱がすごいからオススメ！",
+      "url": "https://mintwood.github.io/kplus-koenji/index.html"
+    },
+    {
+      "name": "D-drunk",
+      "desc": "ダーツもカラオケも楽しめる！プロも多いからガチで楽しめる！",
+      "url": "https://search.dartslive.com/jp/shop/86ee45be90b0a3f40d9b047a20a7ba1e"
+    },
+    {
+      "name": "DARTS BAR ROCKS",
+      "desc": "岡崎でダーツするならここ行ってみて！",
+      "url": "https://search.dartslive.com/jp/shop/0c3d6010f50cee17a3f63593b5358cc4/basic-information"
+    }
+  ],
+  "faq": [
+    {
+      "q": "企画が未定でも頼めますか？",
+      "a": "ざっくり希望・ご予算だけでもご提案OK"
+    },
+    {
+      "q": "イベントは盛り上がりますか？",
+      "a": "精一杯、お客様と交流しダーツやトークで盛り上げます！"
+    }
+  ],
+  "recommend": [
+    "「プロイベント」でもっと集客したい方へ",
+    "「女性・若い層を増やしたい」方へ",
+    "「お店をもっと盛り上げたい！」方へ"
+  ],
+  "contact": {
+    "desc": "下記テンプレートに入力後、コピーしてInstagram、XのDMで送信してください。",
+    "template": "【店舗名・会社名】\n\n【ご担当者名】\n\n【連絡先（店舗・会社）】\n\n【開催希望日・時間】\n\n【希望イベント内容】\n\n【ご予算・ご要望】\n\n【その他のご質問、ご要望】",
+    "note": "日程・希望・ざっくり予算だけでOK！初めての店舗様も、お気軽にご相談ください"
+  },
+  "colors": {
+    "mainBlueLight": "#5CE1E6",
+    "mainBlueDark": "#37B9F1",
+    "softBlueBg": "#E0F7FA",
+    "borderBlue": "#B0D9E6",
+    "pinkAccent": "#FF50B0",
+    "deepTextBlue": "#1A3E50",
+    "highlightTextBlue": "#287FB7"
+  }
+}
