@@ -1,6 +1,6 @@
 {
   "category": {
-    "tour": ["JAPAN", "JAPAN LADIES"],  // 複数所属もOKな配列形式
+    "tour": ["JAPAN", "JAPAN LADIES"],
     "area": "東京都",
     "areaGroup": "関東"
   },
@@ -26,7 +26,7 @@
     "feature": "身長ぎり160（自称）／右利き／めっちゃ負けず嫌い😣",
     "area": "東京・関東エリア（その他、応相談）",
     "pref": "東京都",
-    "org": ["Soft Darts Professional Tour JAPAN", "JAPAN LADIES"], // 団体は配列対応
+    "org": ["Soft Darts Professional Tour JAPAN", "JAPAN LADIES"],
     "rating": "ダーツライブ 10",
     "profileImage": "ogp.jpg"
   },
