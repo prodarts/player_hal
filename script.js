@@ -4,17 +4,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const leftArrow = document.getElementById('gallery-left');
   const rightArrow = document.getElementById('gallery-right');
 
-  // 要素が存在するか確認してからイベントリスナーを設定
   if (track && leftArrow && rightArrow) {
     leftArrow.addEventListener('click', () => {
-      // track.clientWidth で現在のトラックの表示幅を取得し、その約90%をスクロール量とする
-      // または、画像1枚分の幅(250px) + margin(15px) = 265px に調整しても良い
       track.scrollBy({ left: -280, behavior: 'smooth' }); // 左にスクロール
     });
 
     rightArrow.addEventListener('click', () => {
-      // track.clientWidth で現在のトラックの表示幅を取得し、その約90%をスクロール量とする
-      // または、画像1枚分の幅(250px) + margin(15px) = 265px に調整しても良い
       track.scrollBy({ left: 280, behavior: 'smooth' }); // 右にスクロール
     });
   }
@@ -64,3 +59,14 @@ function copyContactTemplate() {
     }
   }
 }
+// JSONデータ反映部分 ←★この下に追加
+fetch('./player_hal.json')
+  .then(res => res.json())
+  .then(data => {
+    // 例：基本情報
+    document.getElementById('player-image').src      = data.profile.profileImage;
+    document.getElementById('player-catch').innerHTML   = data.profile.catch.replace(/\n/g,'<br>');
+    ...
+    // 配列 → forEach で li 生成
+    data.strengths.forEach(str => { ... });
+  });
