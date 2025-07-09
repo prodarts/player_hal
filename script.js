@@ -18,9 +18,39 @@ document.addEventListener('DOMContentLoaded', () => {
       track.scrollBy({ left: 280, behavior: 'smooth' }); // 右にスクロール
     });
   }
-});
 
-// お問い合わせテンプレートをコピーする機能
+  // ***** ここから新しいアニメーション機能の追加 *****
+
+  // アニメーションさせたいすべての要素を取得
+  const fadeInElements = document.querySelectorAll('.fade-in-item');
+
+  // Intersection Observer の設定
+  const options = {
+    root: null, // ビューポートをルート（基準）とする
+    rootMargin: '0px', // ルートのマージン（今回はなし）
+    threshold: 0.1 // 要素が10%でも見えたらコールバック関数を実行
+  };
+
+  // Intersection Observer のインスタンスを作成
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      // 要素がビューポートに入った場合
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible'); // 'is-visible' クラスを追加してアニメーションを開始
+        observer.unobserve(entry.target); // 一度アニメーションしたら監視を解除（繰り返しアニメーションさせないため）
+      }
+    });
+  }, options);
+
+  // 各要素を監視対象に追加
+  fadeInElements.forEach(element => {
+    observer.observe(element);
+  });
+
+  // ***** 新しいアニメーション機能の追加はここまで *****
+}); // <-- この閉じカッコの直前に上記コードを追加しました
+
+// お問い合わせテンプレートをコピーする機能 (既存の関数はそのまま)
 function copyContactTemplate() {
   const contactTemplate = document.getElementById('contact-template');
   const copyAlert = document.getElementById('copy-alert');
@@ -64,4 +94,3 @@ function copyContactTemplate() {
     }
   }
 }
-
