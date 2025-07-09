@@ -726,3 +726,20 @@ tr.sns-row td {
   border: none;
   box-shadow: none;
 }
+/* ================================== */
+/* スクロールアニメーション用CSS */
+/* ================================== */
+
+/* アニメーションさせたい要素の初期状態 */
+.fade-in-item {
+  opacity: 0; /* 最初は透明 */
+  transform: translateY(50px); /* 下から50pxの位置に配置 */
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* アニメーションの時間とイージング */
+  will-change: opacity, transform; /* アニメーションのパフォーマンス最適化 */
+}
+
+/* 要素がビューポートに入ったときに適用されるクラス */
+.fade-in-item.is-visible {
+  opacity: 1; /* 不透明にする */
+  transform: translateY(0); /* 元の位置に戻す */
+}
