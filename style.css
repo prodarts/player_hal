@@ -351,3 +351,38 @@ var(--soft-blue-bg), #CCEEFF); border-top: 1px solid var(--border-blue); }
     margin-top: 100px; /* この数字を大きくするともっと下に行きます */
   }
 }
+
+
+.header-overlay-text {
+  position: absolute;
+  left: 3%;
+  bottom: 6%;
+  top: auto;     /* ← これで top の影響を無効化 */
+  transform: none; /* ← これで translate の影響も消す */
+  z-index: 3;
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.2);
+  pointer-events: none;
+  white-space: pre-line; /* ← 改行対応したい場合はこれ */
+  text-align: left;      /* ← 文字も左寄せ */
+}
+.header-overlay-text {
+  /* ...省略... */
+  left: 3%;        /* ← 横（左）からの距離 */
+  bottom: 7%;      /* ← 下からの距離（ここが上下調整ポイント！） */
+  /* ← もっと上に出したいなら15%や20%など */
+  /* ...省略... */
+}
+.header-overlay-text {
+  /* ...省略... */
+  color: #fff;  /* 白文字 */
+  text-shadow:
+    0 0 6px rgba(0,0,0,0.6),   /* やや広がる黒影 */
+    0 2px 4px rgba(0,0,0,0.7), /* 下に濃いめの影 */
+    1px 1px 0px #000;          /* さらに輪郭用の黒 */
+}
+.catch.anim-text {
+  display: none;
+}
