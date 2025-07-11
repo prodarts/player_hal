@@ -10,8 +10,15 @@
   --highlight-text-blue: #287FB7; /* 強調テキスト、少し明るい青 */
 
   /* ヘッダーのオーバーレイカラー（メインの青を半透明に） */
-  --header-overlay-color: rgba(55, 185, 241, 0.7); 
+   /* 0.7 → 少し濃い（暗めの）オーバーレイ */
+  --header-overlay-color: rgba(55, 185, 241, 0.4); 
 }
+ /* 0.3 → かなり薄い（明るい）オーバーレイ */
+  /* --header-overlay-color: rgba(33, 150, 243, 0.3); */
+
+  /* 0 → 完全透明（フィルター無し） */
+  /* --header-overlay-color: rgba(33, 150, 243, 0); */
+
 
 body {
   font-family: 'Noto Sans JP', sans-serif;
